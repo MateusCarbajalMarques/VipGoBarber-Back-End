@@ -1,0 +1,19 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "12345678",
+    "database": "barbearia",
+    "entities" :[
+        "./src/models/*.ts"
+    ],
+    "migrations": [
+        "./src/database/migrations/*.ts"
+    ], 
+     "cli":{
+         "migrationsDir":"./src/database/migrations"
+     }
+    
+ }
+
