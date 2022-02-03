@@ -1,10 +1,10 @@
 import { Router } from "express";
-import AuthenticateUserService from '../services/AuthenticateUserService';
+import AuthenticateUserService from '@modules/Users/services/AuthenticateUserService';
 
 const sessionsRouter = Router();
 
 sessionsRouter.post("/", async (request, response) => {
-  try{
+ 
     const { email, password } = request.body;
 
     const authenticateUserService  = new AuthenticateUserService();
@@ -16,9 +16,6 @@ sessionsRouter.post("/", async (request, response) => {
 
     return response.json({user, token});
     
-  } catch (err: any) {
-    return response.status(err.statusCode).json({ error: err.message });
-  }
 });
 
 export default sessionsRouter;
